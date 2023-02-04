@@ -1,12 +1,14 @@
 {% load pwa %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% progressive_web_app_meta %}
+        <title>My Project</title>
+    </head>
 
-<head>
-    ...
-    {% progressive_web_app_meta %}
-    ...
-</head>
+    <body>
+        {% block content %}
 
-<body>
-    {% block body %}
-    {% endblock %}
-</body>
+        {% endblock content %}
+    </body>
+</html>
