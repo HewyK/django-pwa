@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Send Notification</h1>
+
+<form action="/send" method="post">
+    {% csrf_token %}
+    Notification: {{form.notification_text}}
+    <input type="submit" value="Send" />
+  </form>
+
+{% endblock %}

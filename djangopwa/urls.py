@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pwa.urls')),  # You MUST use an empty string as the URL prefix
     path('', IndexView.as_view()),
+    path('notify', SendNotificationView.as_view()),
+    path('send', Notify),
 ]
