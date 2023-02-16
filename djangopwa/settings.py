@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'pwa_webpush',
-    'fcm_django',
 
     'allauth',
     'allauth.account',

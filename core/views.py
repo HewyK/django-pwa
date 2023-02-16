@@ -3,8 +3,6 @@ from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
 from core.forms import *
 from core.azure_notify import *
-from firebase_admin.messaging import Message
-from fcm_django.models import FCMDevice
 from pwa_webpush import send_user_notification
 
 # Create your views here.
