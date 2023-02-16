@@ -216,3 +216,8 @@ LOGGING = {
       },
    },
 }
+
+#Railway.app deployment details
+
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS=['https://pwa.kh0.co']
