@@ -20,6 +20,8 @@ from core.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
+
     path('', include('pwa_webpush.urls')),  # You MUST use an empty string as the URL prefix
     path('', IndexView.as_view()),
     path('notify', SendNotificationView.as_view()),
