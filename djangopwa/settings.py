@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
-    'pwa',
+    'pwa_webpush',
+    'fcm_django',
+
 ]
 
 MIDDLEWARE = [
@@ -137,6 +139,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # PWA Settings
 
+#PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'templates', 'serviceworker.js')
+
 PWA_APP_NAME = 'My App'
 PWA_APP_DESCRIPTION = "My app description"
 PWA_APP_THEME_COLOR = '#0A0302'
@@ -168,3 +172,30 @@ PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'en-US'
 
 PWA_APP_DEBUG_MODE = True
+
+
+WEBPUSH_SETTINGS = {
+    "VAPID_PUBLIC_KEY": "BAUb5vm_rXbC6BcPTsT0Ewsl9tI9x376fV3e_7dkYtaCUSbLv8SV1pIUjmhpANFugmCwBAYVGu9bj289Gt7-lZw",
+    "VAPID_PRIVATE_KEY":"4YKADwQSf1ACC5My4Njw6ZZPF0MF8Pfj0-q4pb_Bu-c",
+    "VAPID_ADMIN_EMAIL": "vapid@karlhewitson.com"
+}
+
+
+LOGGING = {
+   'version': 1,
+   'disable_existing_loggers': False,
+   'handlers': {
+      'file': {
+         'level': 'DEBUG',
+         'class': 'logging.FileHandler',
+         'filename': '/tmp/debug.log',
+      },
+   },
+   'loggers': {
+      'django': {
+         'handlers': ['file'],
+         'level': 'DEBUG',
+         'propagate': True,
+      },
+   },
+}

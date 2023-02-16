@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from core.views import *
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('pwa.urls')),  # You MUST use an empty string as the URL prefix
+    path('', include('pwa_webpush.urls')),  # You MUST use an empty string as the URL prefix
     path('', IndexView.as_view()),
     path('notify', SendNotificationView.as_view()),
     path('send', Notify),
+
 ]

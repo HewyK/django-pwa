@@ -2,6 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
 from core.forms import *
+from core.azure_notify import *
+from firebase_admin.messaging import Message
+from fcm_django.models import FCMDevice
+from pwa_webpush import send_user_notification
 
 # Create your views here.
 
@@ -38,6 +42,36 @@ def Notify(request):
             print('valid form')
 
             print('Notification: ', form.cleaned_data['notification_text'])
+
+            # isDebug = True
+            # connection_string = 'Endpoint=sb://keeplNotificationHubNamespace-test.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=8orbRUAKOctpAlzRRahiU0NfZ2YXVOLfMfcWD60fw9c='
+            # hub_name = 'keeplNotificationHub-test'
+            # alert_payload = {
+            #         'data':
+            #             {
+            #                 'msg': form.cleaned_data['notification_text']
+            #             }
+            #     }
+
+            # hub = AzureNotificationHub(connection_string, hub_name, isDebug)
+            # hub.send_google_notification(payload=alert_payload, is_direct=False)
+
+
+
+            # # You can still use .filter() or any methods that return QuerySet (from the chain)
+            # device = FCMDevice.objects.all().first()
+            # # send_message parameters include: message, dry_run, app
+            # device.send_message(Message(title="title", body="text", image="url"),
+            #     topic="Optional topic parameter: Whatever you want",)
+
+            payload = {"head": "Welcome!", "body": "Hello World"}
+
+            print('current user: ', request.user)
+
+            send_user_notification(user=request.user, payload=payload, ttl=1000)
+            # Here in the user parameter, a user object should be passed
+            # The user will get notification to all of his subscribed browser. A user can subscribe many browsers.
+
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
