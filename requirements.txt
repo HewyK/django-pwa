@@ -3,3 +3,4 @@ gunicorn
 django-allauth
 django-pwa-webpush
 whitenoise
+django-cors-headers

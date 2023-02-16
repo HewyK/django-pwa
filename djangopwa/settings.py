@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'pwa_webpush',
+    'corsheaders',
 
     'allauth',
     'allauth.account',
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'djangopwa.urls'
@@ -219,5 +221,4 @@ LOGGING = {
 
 #Railway.app deployment details
 
-if not DEBUG:
-    CSRF_TRUSTED_ORIGINS=['https://pwa.kh0.co']
+CSRF_TRUSTED_ORIGINS=['https://pwa.kh0.co']
