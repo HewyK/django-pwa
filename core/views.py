@@ -62,7 +62,7 @@ def Notify(request):
             # device.send_message(Message(title="title", body="text", image="url"),
             #     topic="Optional topic parameter: Whatever you want",)
 
-            payload = {"head": "Welcome!", "body": "Hello World"}
+            payload = {"head": form.cleaned_data['title'], "body": form.cleaned_data['notification_text']}
 
             print('current user: ', request.user)
 

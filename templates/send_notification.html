@@ -7,7 +7,9 @@
 
 <form action="/send" method="post">
     {% csrf_token %}
-    Notification: {{form.notification_text}}
+    Title: {{form.title}}<br>
+    Notification Body: {{form.notification_text}}
+
     <input type="submit" value="Send" />
   </form>
   <br>
