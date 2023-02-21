@@ -26,5 +26,9 @@ urlpatterns = [
     path('', IndexView.as_view()),
     path('notify', SendNotificationView.as_view()),
     path('send', Notify),
+    path('.well-known/assetlinks.json',(TemplateView.as_view(
+                template_name="assetlinks.json",
+                content_type='application/json',
+            )), name='.well-known/assetlinks.json'),
 
 ]
