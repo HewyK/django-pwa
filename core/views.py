@@ -62,7 +62,11 @@ def Notify(request):
             # device.send_message(Message(title="title", body="text", image="url"),
             #     topic="Optional topic parameter: Whatever you want",)
 
-            payload = {"head": form.cleaned_data['title'], "body": form.cleaned_data['notification_text']}
+            icon_url = '/static/images/icons/icon-72x72.png'
+            payload = {"head": form.cleaned_data['title'],
+                       "body": form.cleaned_data['notification_text'],
+                       "icon": "https://cdnkeepltest.azureedge.net/static/assets/img/keepl-white-transparent.png",
+                       "url": "https://keepl-test.azurewebsites.net"}
 
             print('current user: ', request.user)
 
