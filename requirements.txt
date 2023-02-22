@@ -1,6 +1,8 @@
 django
 gunicorn
+python-decouple
 django-allauth
 django-pwa-webpush
 whitenoise
 django-cors-headers
+psycopg2
