@@ -63,10 +63,15 @@ def Notify(request):
             #     topic="Optional topic parameter: Whatever you want",)
 
             icon_url = '/static/images/icons/icon-72x72.png'
+            if form.cleaned_data['url'] != '':
+                url = form.cleaned_data['url']
+            else:
+                url = "https://keepl-test.azurewebsites.net"
+
             payload = {"head": form.cleaned_data['title'],
                        "body": form.cleaned_data['notification_text'],
                        "icon": "https://cdnkeepltest.azureedge.net/static/assets/img/keepl-white-transparent.png",
-                       "url": "https://keepl-test.azurewebsites.net"}
+                       "url": url}
 
             print('current user: ', request.user)
 
