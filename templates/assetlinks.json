@@ -1,6 +1,6 @@
 [{
-        "relation": ["delegate_permission/common.handle_all_urls"],
-        "target" : { "namespace": "android_app", "package_name": "co.kh0.pwa.twa",
-                     "sha256_cert_fingerprints": ["04:CB:32:F1:4D:08:9B:9B:90:A5:99:33:A0:46:22:78:02:D8:89:50:88:F5:18:AF:56:CA:89:7D:51:A6:17:A3"] }
-      }
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "co.kh0.pwa.twa",
+                   "sha256_cert_fingerprints": ["8F:DC:58:3C:FB:AD:E3:0F:35:93:78:C6:22:7B:04:F4:61:25:E0:82:91:D9:06:F9:C6:CA:D8:13:9C:E4:EA:F0"] }
+    }
 ]
